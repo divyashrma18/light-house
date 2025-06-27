@@ -1,0 +1,50 @@
+.section2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  gap: 60px;
+  background-color: #0b0c10;
+  color: #fff;
+  flex-wrap: wrap;
+}
+
+.left img {
+  width: 400px;
+  height: auto;
+  border-radius: 50px;
+  object-fit: cover;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.right {
+  flex: 1;
+  max-width: 600px;
+}
+
+.typewriter {
+  font-size: 2.7rem;
+  font-family: 'Cinzel', serif;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+  width: fit-content;
+  animation: typing 5s steps(40, end) infinite,
+             blink 0.6s step-end infinite;
+}
+
+@keyframes typing {
+  0%   { width: 0 }
+  45%  { width: 105% }
+  55%  { width: 105% }
+  100% { width: 0 }
+}
+
+
+.section2-text {
+  margin-top: 20px;
+  font-size: 1.3rem;
+  line-height: 1.7;
+  color: #ccc;
+  font-family: 'Poppins', sans-serif;
+}
