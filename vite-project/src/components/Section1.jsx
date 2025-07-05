@@ -9,7 +9,7 @@ const Section1 = () => {
     angle: 0,
   });
 
-  const beamOrigin = { x: 670, y: -100 }; // Adjust as needed
+  const beamOrigin = { x: 670, y: -100 };
 
   const handleMouseMove = (e) => {
     const rect = sectionRef.current.getBoundingClientRect();
@@ -26,7 +26,7 @@ const Section1 = () => {
       angle: angle,
     });
 
-    // Letter-by-letter spotlight reveal
+    
     const letters = sectionRef.current.querySelectorAll('.beam-letter');
 
     letters.forEach((letter) => {

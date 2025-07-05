@@ -76,8 +76,7 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Adjust for darkness level */
-  z-index: 1;
+  background: rgba(0, 0, 0, 0.4); 
   pointer-events: none;
 }
 .beam {
@@ -132,7 +131,6 @@ html, body {
   color: white;
   font-size: 1rem;
   cursor: pointer;
-  /* backdrop-filter: blur(3px) */
   transition: all 0.3s ease;
   border-radius: 6px;
   font-family: 'Josefin Sans', sans-serif;
@@ -143,7 +141,7 @@ html, body {
   color: black;
 }
 
-/* Fade-in animation */
+
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -161,7 +159,6 @@ html, body {
 width: 340px;
 height: 100px;
   background-color: rgba(0, 0, 0, 1); 
-  /* background-color: red; */
   z-index: 1;
   pointer-events: none;
 }

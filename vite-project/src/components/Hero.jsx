@@ -23,25 +23,6 @@ const handleMouseMove = (e) => {
     setBeamStyle({ width: distance, angle });
   };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   return (
     <div className="hero" onMouseMove={handleMouseMove} ref={heroRef}>
       <video
