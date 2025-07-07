@@ -1,4 +1,4 @@
-import  { useState, useRef } from 'react';
+import  { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './Hero.css';
 import Navbar from './Navbar';
@@ -6,11 +6,31 @@ import Navbar from './Navbar';
 const Hero = () => {
   const heroRef = useRef(null);
   const [beamStyle, setBeamStyle] = useState({ width: 0, angle: 0 });
-  const beamOrigin = { x: 390, y: 10 };
+  // Remove duplicate and static beamOrigin
+  const getBeamOrigin = () => {
+    if (!heroRef.current) return { x: 0, y: 0 };
+    const rect = heroRef.current.getBoundingClientRect();
+    // Set origin at ~27% from left, -50px from top of hero
+    return { x: rect.width * 0.27, y: -30 };
+  };
+  const [beamOrigin, setBeamOrigin] = useState({ x: 0, y: -50 });
 
-  
+  useEffect(() => {
+    if (heroRef.current) {
+      setBeamOrigin(getBeamOrigin());
+    }
+  }, []);
 
-const handleMouseMove = (e) => {
+  const handleResize = () => {
+    setBeamOrigin(getBeamOrigin());
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const handleMouseMove = (e) => {
     const rect = heroRef.current.getBoundingClientRect();
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
